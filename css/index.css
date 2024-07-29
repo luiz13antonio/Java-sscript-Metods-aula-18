@@ -44,11 +44,25 @@ body{
             font-size: 36px;
             margin-bottom: 26px;
             color: #232323;
-
+            display: flex;
+            justify-content: space-between;
+            & button{
+                height: 46px;
+                background-color: #0084f7;
+                padding: 0 26px;
+                border-radius: 5px;
+                color: #FFFFFF;
+                text-transform: uppercase;
+                font-weight: bold;
+                cursor: pointer;
+                transition-duration: 200ms;
+                &:hover{
+                    background-color: rgb(255, 255, 20);
+                }
+            }
         }
         & ul{
-            display: flex;
-            flex-wrap: grid;
+            display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 16px;
             & li{
@@ -56,12 +70,57 @@ body{
                 box-shadow: 0 5px 10px #00000015;
                 border-radius: 5px;
                 background-color: #FFFFFF;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 16px;
+                & div:nth-child(2){
+                    text-align: right;
+                    & box-icon:hover{
+                        fill: #0084f7;
+                        cursor: pointer;
+                    }
+                }
                 & h5{
                     font-size: 18px;
                     margin-bottom: 10px;
                 }
                 & p{
                     color: #777777;
+                }
+            }
+        }
+    }
+    #overlay{
+        width: 100%;
+        height: 100%;
+        background-color: #00000080;
+        position: fixed;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition-duration: 200ms;
+        &.active{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    .modal{
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        padding: 16px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        & form{
+            & h3{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &:hover{
+                    fill: #0084f7;
                 }
             }
         }
