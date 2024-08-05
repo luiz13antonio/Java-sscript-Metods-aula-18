@@ -15,8 +15,9 @@
 
     </header>
     <main>
-        <h3>minhas tarefas
-        <button onclick="novaTarefa()">criar tarefa</button>
+        <h3>
+            minhas tarefas
+            <button onclick="novaTarefa()">criar tarefa</button>
         </h3>
         <ul>
             <li>
@@ -25,7 +26,7 @@
                     <p>furrardois furos na parede para colocar as buchas e pendurar o quadro</p>
                 </div>
                 <div>
-                    <box-icon name='trash'></box-icon>
+                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
                 </div>
             </li>
             <li>
@@ -34,7 +35,7 @@
                     <p>Em casa</p>
                 </div>
                 <div>
-                    <box-icon name='trash'></box-icon>
+                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
                 </div>
             </li>
             <li>
@@ -43,7 +44,7 @@
                     <p>Ir na KF veiculos se reunir com fabricio</p>
                 </div>
                 <div>
-                    <box-icon name='trash'></box-icon>
+                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
                 </div>
             </li>
             <li>
@@ -52,7 +53,7 @@
                     <p>Entender melhor Variaveis e Constantes</p>
                 </div>
                 <div>
-                    <box-icon name='trash'></box-icon>
+                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
                 </div>
             </li>
             <li>
@@ -61,22 +62,30 @@
                     <p>Ir na loja e comprar o capacete que EU ja escolhi e nao ceder ao consumismo</p>
                 </div>
                 <div>
-                    <box-icon name='trash'></box-icon>
+                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
                 </div>
             </li>
         </ul>
     </main>
 
     <div id="overlay" onclick="fecharModal()"></div>
-    <div id="criar" class="modal">
-        <form >
-            <h3>Nova Tarefa <box-icon name="x"></box-icon></h3>
+    <div id="modal">
+        <form id="criar">
+            <h3>Nova Tarefa <box-icon name="x" onclick="fecharModal()"></box-icon></h3>
             <label for="titulo">titulo</label>
             <input type="text" id="titulo" placeholder="Digite o titulo" required>
             <label for="descricao">descricao</label>
             <textarea id="descricao"></textarea>
             <button type="submit">Criar</button>
         </form>
+        <div id="confirmacao">
+            <h3>alerta<box-icon name="x" onclick="fecharmodal()"></box-icon></h3>
+            <p>deseja realmente apagar esta tarefa</p>
+            <div class="acoes">
+                <button>Cancelar</button>
+                <button>Confirmar</button>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
