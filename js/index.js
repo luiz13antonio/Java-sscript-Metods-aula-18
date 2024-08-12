@@ -45,3 +45,33 @@ let tarefas = [
         descricao: "Ir na loja e comprar o capacete que EU ja escolhi e nao ceder ao consumismo",
     },
 ]
+function listarTarefas(){
+    tarefas.map((tarefa) => {
+        lista.innerHTML += `
+            <li>
+                <div>
+                    <h5>${tarefa.titulo}</h5>
+                    <p>${tarefa.descricao}</p>
+                    <p>furrardois furos na parede para colocar as buchas e pendurar o quadro</p>
+                </div>
+                <div>
+                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
+                </div>
+            </li>
+        `;
+    })
+}
+
+listarTarefas();
+
+function adicionarTarefa(){
+    event.preventDefault();
+    let tarefa = {
+        titulo: titulo.value,
+        descricao: descricao.value
+    }
+    tarefas.push(tarefa)
+    fecharModal();
+    listarTarefas();
+}
+

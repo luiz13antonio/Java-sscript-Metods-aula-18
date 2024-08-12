@@ -19,58 +19,12 @@
             minhas tarefas
             <button onclick="novaTarefa()">criar tarefa</button>
         </h3>
-        <ul>
-            <li>
-                <div>
-                    <h5>pendurar quadro</h5>
-                    <p>furrardois furos na parede para colocar as buchas e pendurar o quadro</p>
-                </div>
-                <div>
-                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h5>comer</h5>
-                    <p>Em casa</p>
-                </div>
-                <div>
-                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h5>Reunião com clientes</h5>
-                    <p>Ir na KF veiculos se reunir com fabricio</p>
-                </div>
-                <div>
-                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h5>Estudar</h5>
-                    <p>Entender melhor Variaveis e Constantes</p>
-                </div>
-                <div>
-                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <h5>Comprar capacete</h5>
-                    <p>Ir na loja e comprar o capacete que EU ja escolhi e nao ceder ao consumismo</p>
-                </div>
-                <div>
-                    <box-icon name='trash' onclick="confirmarExclusao()"></box-icon>
-                </div>
-            </li>
-        </ul>
+        <ul id="lista"></ul>
     </main>
 
     <div id="overlay" onclick="fecharModal()"></div>
     <div id="modal">
-        <form id="criar">
+        <form id="criar" onsubmit="adicionarTarefa()">
             <h3>Nova Tarefa <box-icon name="x" onclick="fecharModal()"></box-icon></h3>
             <label for="titulo">titulo</label>
             <input type="text" id="titulo" placeholder="Digite o titulo" required>
